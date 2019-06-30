@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -it dshnurenko/research-app mvn test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "research-app"
+  env: "ResearchApp-env"
+  bucket_name: "elasticbeanstalk-us-east-1-103680327272"
+  bucket_path: "research-app"
+  on:
+    branch: master
+  access_key_id: $aws_access_key
+  secret_access_key:
+    secure: $aws_secret_key
