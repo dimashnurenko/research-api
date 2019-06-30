@@ -13,5 +13,5 @@ RUN mvn package
 #WORKDIR /app
 #
 #COPY --from=package /app/target/api-core-1.0-SNAPSHOT.jar ./target/api-core-1.0-SNAPSHOT.jar
-
+EXPOSE 80
 CMD ["java", "-jar", "/app/target/api-core-1.0-SNAPSHOT.jar"]
