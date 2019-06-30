@@ -3,4 +3,5 @@ services:
   - docker
 
 before_install:
+  - gem install bundler --pre
   - docker-compose build
