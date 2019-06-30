@@ -6,4 +6,4 @@ before_install:
   - docker build -t dshnurenko/research-app .
 
 script:
-  - docker exec -it dshnurenko/research-app mvn test
+  - docker run -it dshnurenko/research-app mvn test
