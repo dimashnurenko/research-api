@@ -3,5 +3,7 @@ services:
   - docker
 
 before_install:
-  - gem install bundler --pre
-  - docker-compose build
+  - docker build -t dshnurenko/research-app .
+
+script:
+  - docker exec -it dshnurenko/research-app mvn test
