@@ -1,17 +1,7 @@
-FROM maven as package
+FROM openjdk
 
 WORKDIR /app
 
-COPY ./pom.xml ./pom.xml
-RUN mvn clean install
+COPY ./target/api-core-1.0-SNAPSHOT.jar .
 
-COPY ./src ./src
-RUN mvn package
-
-#FROM openjdk:11
-#
-#WORKDIR /app
-#
-#COPY --from=package /app/target/api-core-1.0-SNAPSHOT.jar ./target/api-core-1.0-SNAPSHOT.jar
-EXPOSE 80
-CMD ["java", "-jar", "/app/target/api-core-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "api-core-1.0-SNAPSHOT.jar"]
