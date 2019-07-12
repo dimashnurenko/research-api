@@ -10,7 +10,7 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ds/web-api
+  - docker push dshnurenko/research
 
 #deploy:
 #  provider: elasticbeanstalk
