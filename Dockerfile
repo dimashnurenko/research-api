@@ -1,7 +1,10 @@
-FROM openjdk
+FROM maven
 
 WORKDIR /app
+COPY pom.xml .
+RUN mvn package
 
-COPY ./target/api-core-1.0-SNAPSHOT.jar .
+COPY . .
+RUN mvn package
 
-CMD ["java", "-jar", "api-core-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/api-core-1.0-SNAPSHOT.jar"]

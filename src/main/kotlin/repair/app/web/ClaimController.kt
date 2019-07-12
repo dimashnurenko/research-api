@@ -10,6 +10,6 @@ open class ClaimController {
 
     @GetMapping(path = ["/hello"])
     open fun sayHello(): String {
-        return "hello chutok"
+        return "hello normalek cdssdsdsdsdsdsds"
     }
 }
