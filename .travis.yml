@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t ds/web-api .
+  - docker build -t dshnurenko/research .
 
 script:
-  - docker run ds/web-api mvn test
+  - docker run dshnurenko/research mvn test
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
