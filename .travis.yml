@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t ds/web-api
+  - docker build -t ds/web-api .
 
 script:
   - docker run ds/web-api mvn test
